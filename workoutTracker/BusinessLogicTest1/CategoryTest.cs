@@ -9,19 +9,20 @@ using BusinessLogic;
 
 namespace BusinessLogicTest1
 {
-     [TestFixture]
-        public class CategoryTest
+    [TestFixture]
+    public class CategoryTest
+    {
+        [Test]
+        public static void listcategory()
         {
-            [Test]
-            public static void listcategory()
-            {
-                var obj = new WorkoutAppEntities();
-                var expected = 0;
-                var actual = obj.workout_category.Count();
-                Assert.AreEqual(expected, actual);
 
+            var obj = new CategoryRepository();
+            var expected = 0;
+            var actual = obj.ListAllCategory().Count();
+            Assert.AreEqual(expected, actual);
 
-            }
         }
+
     }
+}
 

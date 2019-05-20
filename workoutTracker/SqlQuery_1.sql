@@ -34,8 +34,9 @@ constraint Pk_workout_active primary key (activity_id )
 FOREIGN KEY (workout_id) REFERENCES workout_collection(workout_id)
 )
 
-select * from workout_active
+select * from workout_category
 
+insert into workout_category values('walking')
 
 
 
