@@ -7,9 +7,9 @@ using System.Web.Http;
 using BusinessLogic;
 
 
-namespace TrackServies.Controllers
+namespace TrackerServices.Controllers
 {
-    public class WorkController : ApiController
+    public class CategoryController : ApiController
     {
         WorkoutAppEntities db = new WorkoutAppEntities();
 
@@ -88,4 +88,4 @@ namespace TrackServies.Controllers
 
     }
 }
-    
+

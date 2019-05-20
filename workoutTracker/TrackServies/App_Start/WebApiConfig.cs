@@ -11,6 +11,8 @@ namespace TrackServies
         {
             // Web API configuration and services
             config.EnableCors();
+
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             // Web API routes
             config.MapHttpAttributeRoutes();
 

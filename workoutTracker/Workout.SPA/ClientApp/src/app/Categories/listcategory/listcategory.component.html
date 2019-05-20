@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-add-category (CategoryAdded)="SaveCategory($event)"></app-add-category>
+    </div>
+    <div class="col-md-12">
+      <table class="table">
+
+
+
+        <tr>
+
+          <th>CATEGORY NAME</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let cate of Categories">
+
+          <app-edit-category [NameAdd]="cate"></app-edit-category>
+
+
+
+          <td></td>
+
+
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
