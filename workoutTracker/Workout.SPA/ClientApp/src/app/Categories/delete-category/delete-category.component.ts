@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Category } from '../Category';
-import { WorkoutService } from '../workout.service';
+
+
+import { Category } from '../../Category';
+import { workoutservice } from '../../workout.service';
 
 
 @Component({
@@ -13,7 +15,7 @@ import { WorkoutService } from '../workout.service';
 export class DeleteCategoryComponent implements OnInit {
   Cate: Category;
 
-  constructor(private currentRoute: ActivatedRoute, private service: WorkoutService) { }
+  constructor(private currentRoute: ActivatedRoute, private service: workoutservice) { }
 
   ngOnInit() {
     let id = this.currentRoute.snapshot.paramMap.get('id');

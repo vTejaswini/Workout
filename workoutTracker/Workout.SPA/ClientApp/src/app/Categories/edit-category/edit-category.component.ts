@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder, NgForm } from '@angular/forms';
-import { workoutservice } from '../workout.service';
-import { Category } from '../Category';
+import { Category } from '../../Category';
+import { workoutservice } from '../../workout.service';
 
 @Component({
   selector: 'app-edit-category',
@@ -16,7 +16,7 @@ export class EditCategoryComponent implements OnInit {
   @Input() NameAdd: Category;
 
 
-  constructor(private currentRoute: ActivatedRoute, private service: WorkoutService, private fb: FormBuilder) { }
+  constructor(private currentRoute: ActivatedRoute, private service: workoutservice, private fb: FormBuilder) { }
   get f() {
     return this.frmCate.controls;
   }
@@ -52,4 +52,4 @@ export class EditCategoryComponent implements OnInit {
     this.f.name.disable();
   }
 }
-}
+

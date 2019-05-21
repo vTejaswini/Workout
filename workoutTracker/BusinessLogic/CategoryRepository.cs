@@ -9,7 +9,7 @@ namespace BusinessLogic
     public class CategoryRepository
     {
 
-        public List<workout_category> ListAllCategory()
+        public List<workout_category> listCategory()
         {
             try
             {

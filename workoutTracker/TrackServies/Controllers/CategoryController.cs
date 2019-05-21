@@ -16,7 +16,7 @@ namespace TrackerServices.Controllers
         public IHttpActionResult Get()
         {
             var ObjRepository = new CategoryRepository();
-            return Ok(ObjRepository.ListAllCategory());
+            return Ok(ObjRepository.listCategory());
         }
 
 

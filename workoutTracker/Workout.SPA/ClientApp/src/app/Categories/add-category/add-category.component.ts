@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
-import { Category } from '../Category';
-import { WorkoutService } from '../workout.service';
+
+import { workoutservice } from '../../workout.service';
+import { Category } from '../../Category';
 
 @Component({
   selector: 'app-add-category',
@@ -13,7 +14,7 @@ export class AddCategoryComponent implements OnInit {
 
   frmCate: FormGroup;
   @Output() CategoryAdded = new EventEmitter<string>();
-  constructor(private fb: FormBuilder, private service: WorkoutService) { }
+  constructor(private fb: FormBuilder, private service: workoutservice) { }
 
 
   ngOnInit() {

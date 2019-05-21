@@ -24,7 +24,7 @@ export class workoutservice {
     return this.http.put(this._url, cate);
   }
 
-  delete(id: string) {
+  delete(id: number) {
     return this.http.delete(this._url + `/${id}`);
   }
 

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { workoutservice } from './workout.service';
-import { Category } from '../Category';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { Category } from '../../Category';
+import { workoutservice } from '../../workout.service';
 
 @Component({
-  selector: 'app-view-all-category',
-  templateUrl: './view-all-category.component.html',
-  styleUrls: ['./view-all-category.component.css']
+  selector: 'app-listcategory',
+  templateUrl: './listcategory.component.html',
+  styleUrls: ['./listCategory.component.css']
 })
-export class ViewAllCategoryComponent implements OnInit {
+export class listCategoryComponent implements OnInit {
 
   Categories: Category[]
   constructor(private service: workoutservice) { }

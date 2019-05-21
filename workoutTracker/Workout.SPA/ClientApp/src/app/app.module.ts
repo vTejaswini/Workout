@@ -10,12 +10,11 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { WorkoutService } from './workout.service';
+import { workoutservice } from './workout.service';
 import { DeleteCategoryComponent } from './Categories/delete-category/delete-category.component';
 import { AddCategoryComponent } from './Categories/add-category/add-category.component';
 import { EditCategoryComponent } from './Categories/edit-category/edit-category.component';
-import { category } from './Category';
-import { ListCategoryComponent } from './Categories/listcategory/listcategory.component';
+import { listCategoryComponent } from './Categories/listcategory/listcategory.component';
 import { SearchcategoryComponent } from './Categories/searchcategory/searchcategory.component';
 
 @NgModule({
@@ -26,7 +25,7 @@ import { SearchcategoryComponent } from './Categories/searchcategory/searchcateg
     CounterComponent,
     FetchDataComponent,
     AddCategoryComponent,
-    ListCategoryComponent,
+    listCategoryComponent,
     DeleteCategoryComponent,
     EditCategoryComponent,
    SearchcategoryComponent
@@ -38,15 +37,15 @@ import { SearchcategoryComponent } from './Categories/searchcategory/searchcateg
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'list-Category', component: ListCategoryComponent },      
+      { path: 'listCategory', component: listCategoryComponent },      
       { path: 'add-Category', component: AddCategoryComponent },
       { path: 'delete-Category/:id', component: DeleteCategoryComponent },
-      { path: 'edit-Category/:id', component: ListCategoryComponent },
+      { path: 'edit-Category/:id', component: EditCategoryComponent },
       { path: 'search-Category', component: SearchcategoryComponent },
-      { path: '', redirectTo: 'list-category', pathMatch: 'full' }
+      { path: '', redirectTo: 'listcategory', pathMatch: 'full' }
     ])
   ],
-  providers: [WorkoutService],
-  bootstrap: [ListCategoryComponent]
+  providers: [workoutservice],
+  bootstrap: [listCategoryComponent]
 })
 export class AppModule { }
