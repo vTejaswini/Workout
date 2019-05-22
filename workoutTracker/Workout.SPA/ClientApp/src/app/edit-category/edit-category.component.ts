@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder, NgForm } from '@angular/forms';
-import { Category } from '../../Category';
-import { workoutservice } from '../../workout.service';
+import { workoutservice } from '../workout.service';
+import { Category } from '../category';
 
 @Component({
   selector: 'app-edit-category',
@@ -11,9 +11,13 @@ import { workoutservice } from '../../workout.service';
 })
 
 export class EditCategoryComponent implements OnInit {
-  public click: boolean = true;
+
+  public click: boolean = false;
   frmCate: FormGroup;
+  @Output() CategoryEdit = new EventEmitter<Category>();
+  @Output() CategoryDelete = new EventEmitter<Category>();
   @Input() NameAdd: Category;
+
 
 
   constructor(private currentRoute: ActivatedRoute, private service: workoutservice, private fb: FormBuilder) { }
@@ -37,7 +41,9 @@ export class EditCategoryComponent implements OnInit {
 
   saveForm(frm: NgForm) {
     if (frm.valid) {
-      let cate: Category = new Category(frm.value.id, frm.value.name);
+      this.f.name.disable();
+      this.click = false;
+      let cate: Category = new Category(this.NameAdd.category_id, frm.value.name);
       this.service.update(cate).subscribe(
         (data) => alert('updated'),
         (error) => console.log(error)
@@ -47,9 +53,16 @@ export class EditCategoryComponent implements OnInit {
   }
   public Enable(): void {
     this.f.name.enable();
-  }
-  public Disabled(): void {
-    this.f.name.disable();
-  }
-}
+    this.click = true;
 
+  }
+
+  deleteFrm(frm: NgForm) {
+    let cate = new Category(this.NameAdd.category_id, frm.value.category_name);
+    this.CategoryDelete.emit(cate);
+  }
+
+
+
+
+}

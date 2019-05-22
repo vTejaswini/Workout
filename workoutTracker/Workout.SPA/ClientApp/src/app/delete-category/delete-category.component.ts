@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-
-import { Category } from '../../Category';
-import { workoutservice } from '../../workout.service';
+import { workoutservice } from '../workout.service';
+import { Category } from '../category';
 
 
 @Component({

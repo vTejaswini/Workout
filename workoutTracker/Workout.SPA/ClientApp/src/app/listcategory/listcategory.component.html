@@ -13,13 +13,16 @@
           <th>CATEGORY NAME</th>
           <th></th>
         </tr>
-        <tr *ngFor="let cate of Categories">
+        <tr *ngFor="let cat of Categories">
 
-          <app-edit-category [NameAdd]="cate"></app-edit-category>
+          <app-edit-category [NameAdd]="cat" (CategoryEdit)="Edit($event)" (CategoryDelete)="Delete($event)">
+
+          </app-edit-category>
 
 
 
-          <td></td>
+
+          
 
 
         </tr>

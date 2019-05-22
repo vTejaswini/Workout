@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
-import { workoutservice } from '../../workout.service';
-import { Category } from '../../Category';
+import { workoutservice } from '../workout.service';
+import { Category } from '../category';
 
 @Component({
   selector: 'app-add-category',

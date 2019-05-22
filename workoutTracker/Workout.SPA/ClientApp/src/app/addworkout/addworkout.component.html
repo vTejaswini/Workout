@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form novalidate [formGroup]="frmWorkout" (ngSubmit)="saveForm(frmWorkout)" class="col-md-6">
+
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" name="Title" id="Title" formControlName="Title" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Note</label>
+          <textarea type="text" name="Note" id="Note" formControlName="Note" class="form-control"></textarea>
+
+        </div>
+
+        <div class="form-group form-inline">
+          <label>Calories Burnt Per Min</label>
+          <input type="text" name="Calories" id="Calorie" formControlName="Calories" class="form-control" value="{{count}}" />
+          <button type="button" class="btn btn-success" (click)="inc()">+</button>
+          <button type="button" class="btn btn-danger" (click)="dec()">-</button>
+        </div>
+
+        <div class="form-group">
+          <label>Category</label>
+          <select class="form-control">
+            <option *ngFor="let cat of categories" [value]="cat.category_id">{{cat.category_name}}</option>
+
+          </select>
+          <button type="button" class="btn btn-primary">+</button>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" [disabled]="!frmWorkout.valid" class="btn btn-success">Add Workout</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+

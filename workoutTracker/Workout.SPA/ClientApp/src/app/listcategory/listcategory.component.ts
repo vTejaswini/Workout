@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { dashCaseToCamelCase } from '@angular/compiler/src/util';
-import { Category } from '../../Category';
-import { workoutservice } from '../../workout.service';
+import { NgForm } from '@angular/forms';
+import { workoutservice } from '../workout.service';
+import { Category } from '../category';
 
 @Component({
-  selector: 'app-listcategory',
+  selector: 'app-list-category',
   templateUrl: './listcategory.component.html',
-  styleUrls: ['./listCategory.component.css']
+  styleUrls: ['./listcategory.component.css']
 })
 export class listCategoryComponent implements OnInit {
+  cate: string = '';
 
   Categories: Category[]
   constructor(private service: workoutservice) { }
+
 
   ngOnInit() {
     this.service.getAll().subscribe(
@@ -27,6 +29,19 @@ export class listCategoryComponent implements OnInit {
       (error) => alert("Failed to add")
     );
   }
+  Edit($event) {
+    this.service.update($event).subscribe(
+      (data) => alert('updated'),
+      (error) => alert("Failed to update")
+    );
+  }
+  Delete($event) {
+    this.service.delete($event.category_id).subscribe(
+      (data) => alert('Deleted'),
+      (error) => alert('Failed to delete'));
+
+  }
+
 
 
 }

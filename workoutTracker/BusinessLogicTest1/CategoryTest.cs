@@ -18,7 +18,7 @@ namespace BusinessLogicTest1
 
             var obj = new CategoryRepository();
             var expected = 0;
-            var actual = obj.ListAllCategory().Count();
+            var actual = obj.listCategory().Count();
             Assert.AreEqual(expected, actual);
 
         }

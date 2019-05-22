@@ -38,5 +38,5 @@ select * from workout_category
 
 insert into workout_category values('walking')
 
-
+insert into workout_collection values('walking','thuru',0.1,12)
 

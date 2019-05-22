@@ -7,9 +7,9 @@
     </div>
     <br />
 
-    <button type="submit" class="btn btn-success btn-lg" (click)="Enable()" [hidden]="click">Edit</button>
-    <button type="submit" class="btn btn-primary btn-lg" (click)="Disabled()" [hidden]="click">Update</button>
-    <button type="submit" class="btn btn-danger btn-lg">Delelte</button>
+    <button type="button" class="btn btn-success btn-lg" (click)="Enable()" [hidden]="click">Edit</button>
+    <button type="button" class="btn btn-primary btn-lg" (click)="saveForm(frmCate)" [hidden]="!click" (ngSubmit)=" saveForm(frm)">Update</button>
+    <button type="button" class="btn btn-danger btn-lg" (click)="deleteFrm(frmCate)">Delete</button>
 
     <div *ngIf="f.name.invaild && f.name.dirty && f.name.errors?.minLength" class="invalid-feedback">
       Minimum 3 Characters
